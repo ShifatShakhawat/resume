@@ -1,0 +1,236 @@
+/*-------page level styling--------*/
+body {
+  font-family: sans-serif;
+}
+
+.resume-inline-list {
+  padding: 0px;
+  margin: 0px;
+}
+
+.resume-inline-list li {
+  display: inline;
+}
+
+.info-section-name {
+  font-size: 1.5em;
+  margin-bottom: 12px;
+}
+
+.resume-section-title {
+  font-size: 1.5em;
+  padding: 7px 10px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+
+.theme-color {
+  color: #000000 !important;
+}
+
+.resume-link, .resume-link:visited {
+  color: #000000;
+}
+
+/*---------specific styling--------*/
+table td{
+  min-width: 100px;
+}
+
+table thead {
+  white-space: nowrap;
+}
+
+.web-only {
+  display: initial;
+}
+
+.print-only {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+body {
+  background-color: #EFEFEF;
+}
+
+.resume-container {
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: -10px 10px 30px #9F9F9F;
+  max-width: 70%;
+  background-color: #FFFFFF;
+  color: #444444;
+}
+
+.go-back {
+  position: fixed;
+  left: 3%;
+  top: 30px;
+}
+
+.info-section {
+  text-align: center;
+  color: #000000;
+}
+
+.resume-section-body {
+  margin: 5px 10px;
+}
+
+.resume-section-item {
+  margin: 20px 0px;
+}
+
+.resume-section-item-title {
+  font-weight: bold;
+  color: #333333;
+}
+
+.resume-section-time {
+  font-size: 0.9em;
+  float: right;
+  color: #9f9f9f;
+}
+
+.resume-section-smaller {
+  font-size: 0.9em;
+  color: #666666;
+}
+
+.resume-section-smallest {
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: #666666;
+}
+
+
+/*---------------print-----------------*/
+@page
+{
+  /* auto is the initial value */
+  size: auto;
+
+  /* this affects the margin in the printer settings */
+  /*margin: 0.35in 0.35in;*/
+  margin: 1in 0.75in;
+}
+
+
+@media print {
+  .web-only {
+      display: none;
+  }
+
+  .mobile-only {
+      display: none;
+  }
+
+  .print-only {
+      display: initial;
+  }
+
+
+  body {
+      margin: 0in;
+  }
+
+  /*-----general layout----------*/
+
+  .resume-container {
+      max-width: 100%;
+      box-shadow: none;
+      margin: 0px;
+      padding: 0px;
+  }
+
+  .info-section {
+      font-size: 12px;
+  }
+
+  /*------individual section--------*/
+  .resume-section * {
+      font-size: 12px;
+  }
+
+  .resume-section-title {
+      page-break-inside: avoid;
+      font-size: 16px;
+  }
+
+  .resume-section-body {
+      margin: 0px;
+      color: #999999;
+  }
+
+  .resume-section-item {
+      page-break-inside: avoid;
+      margin: 0.1in;
+  }
+
+  .resume-section-item-course {
+      page-break-inside: auto;
+  }
+
+  .resume-section-item-title {
+      color: #333333;
+  }
+
+  .resume-section-smaller {
+      font-size: 1em;
+  }
+
+  .resume-section-smallest {
+      font-size: 10.5px;
+      color: #AAAAAA;
+  }
+
+  /*-------- section specific publication-----------*/
+  .resume-publication-author, .resume-publication-venue {
+      color: #AAAAAA;
+  }
+}
+
+
+/*------------mobile--------------*/
+@media only screen and (max-device-width: 480px) {
+  .mobile-only {
+      display: initial;
+  }
+
+  .web-only {
+      display: none;
+  }
+
+  .print-only {
+      display: none;
+  }
+
+  .resume-container {
+      /*--------layout---------*/
+      max-width: 95%;
+      padding: 20px 5px;
+      margin: 15px auto;
+  }
+
+  .info-section {
+      margin: 10px 0px;
+  }
+
+  .info-section div {
+      margin-top: 5px;
+  }
+
+  .resume-section {
+      padding: 5px;
+  }
+
+  .resume-section-time {
+      width: 100%;
+      display: block;
+  }
+
+}
